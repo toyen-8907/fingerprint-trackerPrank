@@ -1,0 +1,4 @@
+name = "fingerprint-final"
+compatibility_date = "2024-03-25"
+
+main = "./functions"
