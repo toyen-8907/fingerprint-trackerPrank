@@ -1,6 +1,7 @@
 // functions/api/fingerprint.js
 import { db } from '../../store';
-import UAParser from 'ua-parser-js';
+import * as UAParser from 'ua-parser-js';
+
 
 export async function onRequestPost(context) {
   try {
