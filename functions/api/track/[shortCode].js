@@ -12,7 +12,7 @@ export async function onRequestGet(context) {
       console.error(`【短碼紀錄】無效連結，找不到 db.urls["${shortCode}"]`);
       return new Response('無效連結', { status: 404 });
     }
- 
+
     const ip = request.headers.get('CF-Connecting-IP');
     const ua = request.headers.get('User-Agent');
     const geo = {
@@ -37,7 +37,7 @@ export async function onRequestGet(context) {
 
     // 發送 Discord webhook 通知
     const webhookUrl = 'https://discord.com/api/webhooks/1353930302141239347/1szsFFb63TCOnSse9laS87xVhHENhe_EyaHppyyJjxd6rFq_a_ddSuG9uF7na0eh5sEL';
-    fetch(webhookUrl, {
+    await fetch(webhookUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
