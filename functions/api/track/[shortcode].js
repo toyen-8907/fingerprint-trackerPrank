@@ -12,7 +12,7 @@ export async function onRequestGet(context) {
       console.error(`【短碼紀錄】無效連結，找不到 db.urls["${shortCode}"]`);
       return new Response('無效連結', { status: 404 });
     }
-
+ 
     const ip = request.headers.get('CF-Connecting-IP');
     const ua = request.headers.get('User-Agent');
     const geo = {
